@@ -1,0 +1,24 @@
+export type CriticMetric = {
+  id: string;
+  createdAt: Date;
+  updatedAt: Date;
+  ttcaObject: number | null;
+  ttcaPassEgo: number | null;
+  ttcaEgo: number | null;
+  ttcStationaryobject: number | null;
+  ttcValue: number | null;
+  psd: number | null;
+  tStop: number | null;
+  egoVehAccX: number | null;
+  relativeX: number | null;
+  relativeY: number | null;
+  egoVelX: number | null;
+  objectVelX: number | null;
+  objectName: string | null;
+  objectLength: number | null;
+  objectWidth: number | null;
+  egoLength: number | null;
+  egoWidth: number | null;
+  angleEgo: number | null;
+  ttcaPassObject: number | null;
+};
