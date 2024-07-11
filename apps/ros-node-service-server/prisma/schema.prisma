@@ -1,0 +1,64 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DB_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model TrackedObject {
+  id           String   @id @default(cuid())
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  relX         Float?
+  relY         Float?
+  rotRelZ      Float?
+  egoWidth     Float?
+  objClose     Boolean?
+  absDistClose Boolean?
+  objectLength Float?
+  objectWidth  Float?
+  angleObj     Float?
+  angleEgo     Float?
+  egoLength    Float?
+  egoVelX      Float?
+  egoVehAccX   Float?
+  objectVelX   Float?
+}
+
+model VehicleState {
+  id                String   @id @default(cuid())
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+  steeringAngle     Float?
+  positionX         Float?
+  positionY         Float?
+  orientationZ      Float?
+  steeringDirection Float?
+}
+
+model CriticMetric {
+  id                  String   @id @default(cuid())
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+  ttcaObject          Float?
+  ttcaPassEgo         Float?
+  ttcaEgo             Float?
+  ttcStationaryobject Float?
+  ttcValue            Float?
+  psd                 Float?
+  tStop               Float?
+  egoVehAccX          Float?
+  relativeX           Float?
+  relativeY           Float?
+  egoVelX             Float?
+  objectVelX          Float?
+  objectName          String?
+  objectLength        Float?
+  objectWidth         Float?
+  egoLength           Float?
+  egoWidth            Float?
+  angleEgo            Float?
+  ttcaPassObject      Float?
+}
